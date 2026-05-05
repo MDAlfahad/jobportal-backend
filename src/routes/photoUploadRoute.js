@@ -34,7 +34,6 @@ const upload = multer({ storage });
           sucess:true,
           message: "Uploaded Successfully",
           file: filename,
-           imageUrl: `https://jobportal-backend.up.railway.app/uploads/${filename}`,
           
         });
        
