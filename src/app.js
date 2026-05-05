@@ -14,7 +14,7 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-  origin: "https://jobportal-frontend-one-theta.vercel.app",
+  origin:"*",
   credentials: true
 }));
 
