@@ -1,0 +1,1 @@
+insert into `user_details` (`created_at`, `id`, `user_address`, `user_contact`, `user_email`, `user_id`, `user_name`, `user_skills`) values ('2026-04-06 15:46:28', 1, 'Bhilai', '6260379325', 'Md alfahad', '8bd516f7-f257-43a4-afe4-fc1878a85d13', 'Md alfahad', NULL);
