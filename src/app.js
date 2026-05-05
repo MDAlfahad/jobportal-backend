@@ -11,7 +11,7 @@ const mailrouter = require("./routes/mailRoute");
 const uploadImage = require("./routes/photoUploadRoute");
 
 const app = express();
-app.use(express.json());
+app.use(express.json())
 
 app.use(cors({
   origin:"*",
