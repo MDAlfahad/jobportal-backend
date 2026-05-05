@@ -13,10 +13,14 @@ const uploadImage = require("./routes/photoUploadRoute");
 const app = express();
 app.use(express.json());
 
+<<<<<<< HEAD
 app.use(cors({
   origin: "https://jobportal-frontend-one-theta.vercel.app",
   credentials: true
 }));
+=======
+app.use(cors());
+>>>>>>> f39a0e9ae6cea790d64d45d7ffb1a0d9a04b9e5e
 
 app.use("/uploads", express.static(path.join(__dirname, "./uploads")));
 
