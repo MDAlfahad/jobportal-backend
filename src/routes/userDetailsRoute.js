@@ -143,5 +143,12 @@ userRouter.get("/all-companies", async (req, res) => {
   }
 });
 
+// userRouter.get("userDetails", async (req, res)=>{
+
+//   try{
+//     const sql = `SELECT `
+//   }
+// })
+
 
 module.exports = userRouter;

@@ -17,27 +17,32 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-uploadImage.post("/upload_photo", upload.single("image"), (req, res) => {
-  const filename = req.file.filename;
-  const userId = req.body.userId;
+  uploadImage.post("/upload_photo", upload.single("image"), (req, res) => {
+    const filename = req.file.filename;
+    const userId = req.body.userId;
 
-  db.query(
-    "UPDATE user_logindata SET user_image = ? WHERE user_id = ?",
-    [filename, userId],
-    (err, result) => {
-      if (err) return res.status(500).json({
-        success: false,
-        message: "Failed to Upload Image"
-      });
+    db.query(
+      "UPDATE user_logindata SET user_image = ? WHERE user_id = ?",
+      [filename, userId],
+      (err, result) => {
+        if (err) return res.status(500).json({
+          success: false,
+          message: "Failed to Upload Image"
+        });
 
-      res.json({
-        sucess:true,
-        message: "Uploaded Successfully",
-        file: filename,
-      });
-    },
-  );
-});
+        res.json({
+          sucess:true,
+          message: "Uploaded Successfully",
+          file: filename,
+           imageUrl: `https://jobportal-backend.up.railway.app/uploads/${filename}`,
+          
+        });
+       
+      },
+    );
+    
+    
+  });
 
 uploadImage.post("/companyDetails", upload.single("image"), (req, res) => {
   const { address, number, userId } = req.body;
