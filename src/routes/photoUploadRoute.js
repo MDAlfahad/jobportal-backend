@@ -31,7 +31,7 @@ const upload = multer({ storage });
         });
 
         res.json({
-          sucess:true,
+          success:true,
           message: "Uploaded Successfully",
           file: filename,
           
@@ -39,8 +39,6 @@ const upload = multer({ storage });
        
       },
     );
-    
-    
   });
 
 uploadImage.post("/companyDetails", upload.single("image"), (req, res) => {
