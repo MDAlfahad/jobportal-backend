@@ -87,7 +87,7 @@ postjob.post("/postjob", jobpostauth, async (req, res) => {
 
     res.status(201).json({
       status: true,
-      message: "Job posted successfully",
+      message: "Job posted Successfully",
       job_id,
     });
 
