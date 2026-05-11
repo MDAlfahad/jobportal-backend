@@ -30,7 +30,7 @@ mailrouter.post("/sendMail", async (req, res) => {
       <p>If your qualifications match our requirements, we will contact you regarding the next steps.</p>
       <p>We appreciate your interest in joining our team and wish you the best of luck.</p>
       <p>Best Regards,</p>
-      <p><b>${companyName}</b> Hireing Tream</p>
+      <p><b>${companyName}</b> Hiring Tream</p>
       <p><b>${companyEmail}</b></p>
 
       `,
