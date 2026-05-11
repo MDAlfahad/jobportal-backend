@@ -65,7 +65,7 @@ uploadImage.post(
   }
 );
 
-module.exports = uploadImage;
+module.exports = uploadImage;   
 uploadImage.post("/companyDetails", upload.single("image"), (req, res) => {
   const { address, number, userId } = req.body;
 
