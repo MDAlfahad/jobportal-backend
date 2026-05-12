@@ -5,13 +5,13 @@ dns.setDefaultResultOrder("ipv4first");
 
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
-  port: 587, 
-  secure: false, 
+  port: 587,
+  secure: false,
+  family: 4,
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
   },
-  family: 4,
   tls: {
     rejectUnauthorized: false,
   },
@@ -19,10 +19,19 @@ const transporter = nodemailer.createTransport({
 
 transporter.verify((err, success) => {
   if (err) {
-    console.log(err);
+    console.log("SMTP ERROR:", err);
   } else {
     console.log("SMTP Ready");
   }
 });
 
-module.exports = transporter;
+const sendEmail = async (to, subject, html) => {
+  return await transporter.sendMail({
+    from: `JOB PORTAL <${process.env.EMAIL_USER}>`,
+    to,
+    subject,
+    html,
+  });
+};
+
+module.exports = sendEmail;
