@@ -127,7 +127,6 @@ applyForm.post("/apply-form", uploadMiddleware, async (req, res) => {
       email: useremail,
       position: jobdesigination,
       companyName: companyname,
-      companyEmail: companyemail,
     });
 
     return res.status(200).json({
