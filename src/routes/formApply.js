@@ -6,7 +6,7 @@ const db = require("../config/db");
 const authMiddleware = require("../middleware/jobpostMiddleware");
 const { v4: uuidv4 } = require("uuid");
 const sendMail = require("../config/mail");
-const sendApplicationMail = require("../controllers/sendApplicationMail");
+// const sendApplicationMail = require("../controllers/sendApplicationMail");
 
 const applyForm = express.Router();
 
@@ -122,12 +122,12 @@ applyForm.post("/apply-form", uploadMiddleware, async (req, res) => {
 
     const result = await db.execute(sqlQuery, values);
 
-    await sendApplicationMail({
-      name: username,
-      email: useremail,
-      position: jobdesigination,
-      companyName: companyname,
-    });
+    // await sendApplicationMail({
+    //   name: username,
+    //   email: useremail,
+    //   position: jobdesigination,
+    //   companyName: companyname,
+    // });
 
     return res.status(200).json({
       success: true,
