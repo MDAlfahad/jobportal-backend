@@ -65,7 +65,20 @@ uploadImage.post(
   }
 );
 
-module.exports = uploadImage;   
+uploadImage.get("/userImages", (req, res)=>{
+  db.query(`SELECT user_image rom user_logindata WHERE user_id =?`, (err, result)=>{
+    res.status(500).json({
+      success: false,
+      message: "Database error"
+    })
+    res.status(200).json({
+      success:true,
+      Message: "Fetch successfuly"
+    })
+  })
+})
+
+
 uploadImage.post("/companyDetails", upload.single("image"), (req, res) => {
   const { address, number, userId } = req.body;
 
@@ -87,5 +100,6 @@ uploadImage.post("/companyDetails", upload.single("image"), (req, res) => {
     },
   );
 });
+
 
 module.exports = uploadImage;
