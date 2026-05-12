@@ -6,7 +6,7 @@ mailrouter.post("/sendMail", async (req, res) => {
   try {
     const { name, email, position, companyName, companyEmail } = req.body;
 
-    if (!name || !email || !position || !companyEmail) {
+   if (!name || !email || !position || !companyName || !companyEmail){
       return res.status(400).json({
         success: false,
         message: "All fields required",
@@ -16,7 +16,7 @@ mailrouter.post("/sendMail", async (req, res) => {
     // Email to User
     await sendEmail(
       email,
-      "Application Received – Thank You for Applying",
+      "Application Received – Thank You for Applying",  
       `
       <h2>Dear ${name}</h2>
       <p>Thank you for applying for the position of <b>${position}</b> at <b>${companyName}</b></p>
