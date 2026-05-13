@@ -9,6 +9,7 @@ const applyForm = require("./routes/formApply");
 const path = require("path");
 const mailrouter = require("./routes/mailRoute");
 const uploadImage = require("./routes/photoUploadRoute");
+const applicationRouter = require("./routes/studentApplication");
 
 const app = express();
 app.use(express.json())
@@ -30,5 +31,6 @@ app.use("/api", userauth);
 app.use("/api", applyForm);
 app.use("/api", mailrouter);
 app.use("/api", uploadImage);
+app.use("/api", applicationRouter)
 
 module.exports = app;
