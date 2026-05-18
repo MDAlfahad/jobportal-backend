@@ -24,7 +24,8 @@ jobdata.post("/delete-job", (req, res) => {
     });
   }
 
-  const sql = "DELETE FROM job_postdata WHERE job_id = ?";
+  try{
+    const sql = "DELETE FROM job_postdata WHERE job_id = ?";
 
   db.query(sql, [job_id], (err, result) => {
     if (err) {
@@ -46,5 +47,10 @@ jobdata.post("/delete-job", (req, res) => {
       message: "Job deleted successfully",
     });
   });
+  } catch(err){
+    return res.status(404).json({
+      message: "Database Error"
+    })
+  }
 });
 module.exports = jobdata;
