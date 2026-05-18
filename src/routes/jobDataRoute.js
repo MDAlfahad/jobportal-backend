@@ -14,4 +14,44 @@ jobdata.get("/jobdata", async (req, res) => {
   }
 });
 
+jobdata.post("/delete-job", (req, res) => {
+  const { job_id } = req.body;
+  try {
+    if (!job_id) {
+      return res.status(400).json({
+        success: false,
+        message: "Job ID is required",
+      });
+    }
+
+    const sql = "DELETE FROM job_postdata WHERE id = ?";
+
+    db.query(sql, [jobId], (err, result) => {
+      if (err) {
+        return res.status(500).json({
+          success: false,
+          error: err.message,
+        });
+      }
+
+      if (result.affectedRows === 0) {
+        return res.status(404).json({
+          success: false,
+          message: "Job not found",
+        });
+      }
+
+      res.status(200).json({
+        success: true,
+        message: "Job deleted successfully",
+      });
+    });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      error: err.message,
+    });
+  }
+});
+
 module.exports = jobdata;
