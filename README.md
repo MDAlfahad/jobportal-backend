@@ -1,24 +1,28 @@
-# Website "https://jobportaledu.vercel.app"
+## Backend
 
-# Backend
-Job Portal Backend is a RESTful API server built with Node.js and Express.js that handles authentication, job management, user applications, and dashboard operations for job seekers, companies, and administrators. It provides secure API endpoints, database integration, and efficient data handling to support the complete functionality of the Job Portal platform.
+## Live Website: "jobportaledu.vecel.app"
+
+Job Portal Backend is a scalable RESTful API built with Node.js and Express.js that powers the complete Job Portal ecosystem. It manages authentication, role-based access, job postings, applications, resume handling, and dashboard operations for users, companies, and administrators. The backend is designed for secure communication, efficient database management, and smooth integration with the frontend application.
 
 ## Features
-User authentication and authorization 
-Role-based access (Admin, Company, User)
-Job posting and management APIs
-Job application handling
-Resume upload and file management
-Database CRUD operations
-Protected routes using JWT authentication
-Error handling and API validation
-Dashboard data management
-
+ User authentication and authorization
+ Role-based access control (Admin, Company, User)
+ Create, update, delete, and manage job postings
+ Job application management system
+ Resume upload and file handling support
+ Database CRUD operations
+ Protected API routes using JWT authentication
+ Password encryption using bcrypt
+ Error handling and request validation
+ Dashboard data and analytics management
+ API integration for frontend communication
+ Optimized for scalable and responsive applications
 ## Tech Stack
-Node.js
-Express.js
-MySQL
-JWT Authentication
-Multer (File Upload)
-bcrypt.js
-CORS
+Node.js — Server-side runtime environment
+Express.js — Backend framework
+MySQL — Database management
+JWT — Authentication and route protection
+Multer — File upload handling
+bcrypt.js — Password hashing and security
+CORS — Cross-origin resource sharing
+REST API — Client-server communication architecture
