@@ -14,7 +14,7 @@ router.post("/register_User", async (req, res) => {
     if (!name || !email || !password) {
       return res.status(500).json({
         success: false,
-        message: "All Fields Are Required",
+        message: "All fields are required",
       });
     }
 
@@ -157,7 +157,7 @@ router.post("/login_users", async (req, res) => {
 
     res.status(200).json({
       success: true,
-      message: "Login successful",
+      message: "Login successfully",
       token,
       user: safeUser,
     });
